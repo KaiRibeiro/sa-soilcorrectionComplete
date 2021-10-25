@@ -1,0 +1,38 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu_fos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 50%;
+    margin-right: 10px;
+    margin-left: 10px;
+    background-color: aqua;
+}
+
+.menu_pot {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 50%;
+    margin-right: 10px;
+    margin-left: 10px;
+    background-color: yellow;
+}
+
+.menu_magn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 50%;
+    margin-right: 10px;
+    margin-left: 10px;
+    background-color: lime;
+}
