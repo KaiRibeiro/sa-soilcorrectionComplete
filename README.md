@@ -13,7 +13,11 @@ Padrão do código mantido através do [Angular ESLint](https://github.com/angul
 
 ## Tela Principal
 ![Home](pics/home.PNG)
-No momento a tela principal possui uma barra no topo com um logo do IDR-PR e o nome do projeto. Possuí também um esboço das  possíveis telas disponíveis.
+No momento a tela principal possui uma barra no topo com um logo do IDR-PR e o nome do projeto. Possuí também navegação para a função de correção de solo.
+
+## Correção de Solo
+![Home](pics/correcao.PNG)
+No momento a tela de correcao de solo possui o esqueleto do form.
 
 
 ## Iniciar Projeto
