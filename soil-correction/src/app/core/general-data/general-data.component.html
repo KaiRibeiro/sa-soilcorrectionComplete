@@ -1,0 +1,101 @@
+<form [formGroup]="generalForm">
+  <span>Produtor: </span>
+  <mat-form-field appearance="outline">
+    <mat-label>Produtor</mat-label>
+    <input matInput formControlName="produtor" placeholder="Produtor" />
+  </mat-form-field>
+  <span>Data: </span>
+  <mat-form-field appearance="outline">
+    <mat-label>Data</mat-label>
+    <input matInput formControlName="data" [matDatepicker]="picker" />
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <span>Município: </span>
+  <mat-form-field appearance="outline">
+    <mat-label>Município</mat-label>
+    <input matInput formControlName="municipio" placeholder="Município" />
+  </mat-form-field>
+  <span>Lote: </span>
+  <mat-form-field appearance="outline">
+    <mat-label>Lote</mat-label>
+    <input matInput formControlName="lote" placeholder="Lote" />
+  </mat-form-field>
+  <span>Área Total (ha): </span>
+  <mat-form-field appearance="outline">
+    <mat-label>Área Total (ha)</mat-label>
+    <input matInput formControlName="areaTotal" placeholder="Área Total (ha)" />
+  </mat-form-field>
+  <span>Talhão: </span>
+  <mat-form-field appearance="outline">
+    <mat-label>Talhão</mat-label>
+    <input matInput formControlName="talhao" placeholder="Talhão" />
+  </mat-form-field>
+  <span>Área do Talhão (ha): </span>
+  <mat-form-field appearance="outline">
+    <mat-label>Área do Talhão (ha)</mat-label>
+    <input
+      matInput
+      formControlName="areaTalhao"
+      placeholder="Área do Talhão (ha)"
+    />
+  </mat-form-field>
+  <span>Matrícula do Lote: </span>
+  <mat-form-field appearance="outline">
+    <mat-label>Matrícula do Lote</mat-label>
+    <input
+      matInput
+      formControlName="matriculaLote"
+      placeholder="Matrícula do Lote"
+    />
+  </mat-form-field>
+  <span>Textura De Solo: </span>
+    <mat-form-field appearance="outline">
+      <mat-label>Textura De Solo</mat-label>
+      <mat-select formControlName="texturaSolo" name="Textura De Solo">
+        <mat-option [value]="1"> Argiloso </mat-option>
+        <mat-option [value]="2"> Texture Média </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <span *ngIf="this.generalForm.value.texturaSolo === 1">
+      <span class="tipoSolo"> Argiloso</span> +40% de argila
+    </span>
+    <span *ngIf="this.generalForm.value.texturaSolo === 2">
+      <span class="tipoSolo"> Text. Média</span> 25 a 40% de argila
+    </span>
+    <span>Sistema de Cultivo: </span>
+  <mat-form-field appearance="outline">
+    <mat-label>Sistema de Cultivo</mat-label>
+    <mat-select formControlName="sistemaCultivo" name="Sistema de Cultivo">
+      <mat-option [value]="1"> Plantio Direto </mat-option>
+      <mat-option [value]="2"> Convencional </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <span>Responsável Técnico: </span>
+  <mat-form-field appearance="outline">
+    <mat-label>Responsável Técnico</mat-label>
+    <input
+      matInput
+      formControlName="responsavelTecnico"
+      placeholder="Responsável Técnico"
+    />
+  </mat-form-field>
+  <span>Profundidade da amostra de solos (cm): </span>
+  <mat-form-field appearance="outline">
+    <mat-label>Profundidade da amostra de solos (cm)</mat-label>
+    <input
+      matInput
+      formControlName="profundidadeAmostra"
+      placeholder="Profundidade da amostra de solos (cm)"
+    />
+  </mat-form-field>
+  <span>Resultado da análise de solos Nº: </span>
+  <mat-form-field appearance="outline">
+    <mat-label>Resultado da análise de solos Nº</mat-label>
+    <input
+      matInput
+      formControlName="resultNum"
+      placeholder="Resultado da análise de solos Nº"
+    />
+  </mat-form-field>
+</form>

@@ -4,7 +4,7 @@ body {
     justify-content: center;
 }
 
-.menu_fos {
+.menu_corr {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -12,27 +12,11 @@ body {
     height: 50%;
     margin-right: 10px;
     margin-left: 10px;
-    background-color: aqua;
+    background-color: rgb(127, 136, 136);
+    text-decoration: none;
+    color: black;
 }
 
-.menu_pot {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50%;
-    height: 50%;
-    margin-right: 10px;
-    margin-left: 10px;
-    background-color: yellow;
-}
-
-.menu_magn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50%;
-    height: 50%;
-    margin-right: 10px;
-    margin-left: 10px;
-    background-color: lime;
+.menu_corr:hover {
+    background-color: rgb(45, 49, 49);
 }

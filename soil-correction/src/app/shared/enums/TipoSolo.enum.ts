@@ -1,4 +1,4 @@
 export enum ETipoSolo {
-  ARGILOSO,
-  TEXTURA_MEDIA
+  ARGILOSO = 1,
+  TEXTURA_MEDIA = 2
 }
