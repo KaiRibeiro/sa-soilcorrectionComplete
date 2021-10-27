@@ -17,7 +17,8 @@ No momento a tela principal possui uma barra no topo com um logo do IDR-PR e o n
 
 ## Correção de Solo
 ![Home](pics/correcao.PNG)
-No momento a tela de correcao de solo possui o esqueleto do form.
+![Home](pics/correcao2.PNG)
+No momento a tela de correção de solo possui o formulário de dados gerais e o formulário de teores. Também foram separados entre guias as possíveis novas telas.
 
 
 ## Iniciar Projeto

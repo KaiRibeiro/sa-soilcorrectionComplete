@@ -24,6 +24,13 @@ export class GeneralDataComponent implements OnInit {
       responsavelTecnico: [null],
       profundidadeAmostra: [null],
       resultNum: [null],
+      fosforo: [null],
+      potassio: [null],
+      calcio: [null],
+      magnesio: [null],
+      enxofre: [null],
+      aluminio: [null],
+      hal: [null],
     });
   }
 

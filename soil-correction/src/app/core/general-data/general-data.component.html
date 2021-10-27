@@ -1,55 +1,69 @@
-<form [formGroup]="generalForm">
-  <span>Produtor: </span>
-  <mat-form-field appearance="outline">
-    <mat-label>Produtor</mat-label>
-    <input matInput formControlName="produtor" placeholder="Produtor" />
-  </mat-form-field>
-  <span>Data: </span>
-  <mat-form-field appearance="outline">
-    <mat-label>Data</mat-label>
-    <input matInput formControlName="data" [matDatepicker]="picker" />
-    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
-  </mat-form-field>
-  <span>Município: </span>
-  <mat-form-field appearance="outline">
-    <mat-label>Município</mat-label>
-    <input matInput formControlName="municipio" placeholder="Município" />
-  </mat-form-field>
-  <span>Lote: </span>
-  <mat-form-field appearance="outline">
-    <mat-label>Lote</mat-label>
-    <input matInput formControlName="lote" placeholder="Lote" />
-  </mat-form-field>
-  <span>Área Total (ha): </span>
-  <mat-form-field appearance="outline">
-    <mat-label>Área Total (ha)</mat-label>
-    <input matInput formControlName="areaTotal" placeholder="Área Total (ha)" />
-  </mat-form-field>
-  <span>Talhão: </span>
-  <mat-form-field appearance="outline">
-    <mat-label>Talhão</mat-label>
-    <input matInput formControlName="talhao" placeholder="Talhão" />
-  </mat-form-field>
-  <span>Área do Talhão (ha): </span>
-  <mat-form-field appearance="outline">
-    <mat-label>Área do Talhão (ha)</mat-label>
-    <input
-      matInput
-      formControlName="areaTalhao"
-      placeholder="Área do Talhão (ha)"
-    />
-  </mat-form-field>
-  <span>Matrícula do Lote: </span>
-  <mat-form-field appearance="outline">
-    <mat-label>Matrícula do Lote</mat-label>
-    <input
-      matInput
-      formControlName="matriculaLote"
-      placeholder="Matrícula do Lote"
-    />
-  </mat-form-field>
-  <span>Textura De Solo: </span>
+<form class="generalData" [formGroup]="generalForm" fxLayout="column" fxLayoutAlign="center center">
+
+  <div fxLayout="column" fxLayoutAlign="center center">
+    <h1>Geral</h1>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+    <span>Produtor: </span>
+    <mat-form-field appearance="outline">
+      <mat-label>Produtor</mat-label>
+      <input matInput formControlName="produtor" placeholder="Produtor" />
+    </mat-form-field>
+    <span>Data: </span>
+    <mat-form-field appearance="outline">
+      <mat-label>Data</mat-label>
+      <input matInput formControlName="data" [matDatepicker]="picker" />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </div>
+
+  <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+    <span>Município: </span>
+    <mat-form-field appearance="outline">
+      <mat-label>Município</mat-label>
+      <input matInput formControlName="municipio" placeholder="Município" />
+    </mat-form-field>
+    <span>Lote: </span>
+    <mat-form-field appearance="outline">
+      <mat-label>Lote</mat-label>
+      <input matInput formControlName="lote" placeholder="Lote" />
+    </mat-form-field>
+    <span>Área Total (ha): </span>
+    <mat-form-field appearance="outline">
+      <mat-label>Área Total (ha)</mat-label>
+      <input matInput formControlName="areaTotal" placeholder="Área Total (ha)" />
+    </mat-form-field>
+  </div>
+
+  <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+    <span>Talhão: </span>
+    <mat-form-field appearance="outline">
+      <mat-label>Talhão</mat-label>
+      <input matInput formControlName="talhao" placeholder="Talhão" />
+    </mat-form-field>
+    <span>Área do Talhão (ha): </span>
+    <mat-form-field appearance="outline">
+      <mat-label>Área do Talhão (ha)</mat-label>
+      <input
+        matInput
+        formControlName="areaTalhao"
+        placeholder="Área do Talhão (ha)"
+      />
+    </mat-form-field>
+    <span>Matrícula do Lote: </span>
+    <mat-form-field appearance="outline">
+      <mat-label>Matrícula do Lote</mat-label>
+      <input
+        matInput
+        formControlName="matriculaLote"
+        placeholder="Matrícula do Lote"
+      />
+    </mat-form-field>
+  </div>
+  
+  <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+    <span>Textura De Solo: </span>
     <mat-form-field appearance="outline">
       <mat-label>Textura De Solo</mat-label>
       <mat-select formControlName="texturaSolo" name="Textura De Solo">
@@ -71,31 +85,117 @@
       <mat-option [value]="2"> Convencional </mat-option>
     </mat-select>
   </mat-form-field>
-  <span>Responsável Técnico: </span>
-  <mat-form-field appearance="outline">
-    <mat-label>Responsável Técnico</mat-label>
-    <input
-      matInput
-      formControlName="responsavelTecnico"
-      placeholder="Responsável Técnico"
-    />
-  </mat-form-field>
-  <span>Profundidade da amostra de solos (cm): </span>
-  <mat-form-field appearance="outline">
-    <mat-label>Profundidade da amostra de solos (cm)</mat-label>
-    <input
-      matInput
-      formControlName="profundidadeAmostra"
-      placeholder="Profundidade da amostra de solos (cm)"
-    />
-  </mat-form-field>
-  <span>Resultado da análise de solos Nº: </span>
-  <mat-form-field appearance="outline">
-    <mat-label>Resultado da análise de solos Nº</mat-label>
-    <input
-      matInput
-      formControlName="resultNum"
-      placeholder="Resultado da análise de solos Nº"
-    />
-  </mat-form-field>
+  </div>
+
+  <div fxLayout="row" fxLayoutAlign="center center"  fxLayoutGap="5px">
+    <span>Responsável Técnico: </span>
+    <mat-form-field appearance="outline">
+      <mat-label>Responsável Técnico</mat-label>
+      <input
+        matInput
+        formControlName="responsavelTecnico"
+        placeholder="Responsável Técnico"
+      />
+    </mat-form-field>
+    <span>Profundidade da amostra de solos (cm): </span>
+    <mat-form-field appearance="outline">
+      <mat-label>Profundidade da amostra de solos (cm)</mat-label>
+      <input
+        matInput
+        formControlName="profundidadeAmostra"
+        placeholder="Profundidade da amostra de solos (cm)"
+      />
+    </mat-form-field>
+    <span>Resultado da análise de solos Nº: </span>
+    <mat-form-field appearance="outline">
+      <mat-label>Resultado da análise de solos Nº</mat-label>
+      <input
+        matInput
+        formControlName="resultNum"
+        placeholder="Resultado da análise de solos Nº"
+      />
+    </mat-form-field>
+  </div>
+
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <h1>Teores</h1>
+  </div>
+
+  <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+    <mat-card>
+      <mat-card-title>mg.dm3 | mehlich</mat-card-title>
+      <mat-card-content>
+        <h3 class="cardLabel">Fósforo:</h3>
+        <mat-form-field appearance="outline">
+          <mat-label>Fósforo</mat-label>
+            <input matInput formControlName="fosforo" placeholder="Fósforo" />
+        </mat-form-field>
+        <h3 class="cardIdeal">Ideal 9,0</h3>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card>
+      <mat-card-title fxLayout="row wrap" fxLayoutAlign="center center">cmol</mat-card-title>
+      <mat-card-content fxLayout="column wrap" fxLayoutAlign="center center">
+        <h3 class="cardLabel">Potássio:</h3>
+        <mat-form-field appearance="outline">
+          <mat-label>Potássio</mat-label>
+            <input matInput formControlName="potassio" placeholder="Potássio" />
+        </mat-form-field>
+        <h3 class="cardIdeal">Ideal 0,35</h3>
+
+        <h3 class="cardLabel">Cálcio:</h3>
+        <mat-form-field appearance="outline">
+          <mat-label>Cálcio</mat-label>
+            <input matInput formControlName="calcio" placeholder="Cálcio" />
+        </mat-form-field>
+        <h3 class="cardIdeal">Ideal 6,0</h3>
+
+        <h3 class="cardLabel">Magnésio:</h3>
+        <mat-form-field appearance="outline">
+          <mat-label>Magnésio</mat-label>
+            <input matInput formControlName="magnesio" placeholder="Magnésio" />
+        </mat-form-field>
+        <h3 class="cardIdeal">Ideal 1,5</h3>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card>
+      <mat-card-title>mg.dm3</mat-card-title>
+      <mat-card-content>
+        <h3 class="cardLabel">Enxofre:</h3>
+        <mat-form-field appearance="outline">
+          <mat-label>Enxofre</mat-label>
+            <input matInput formControlName="enxofre" placeholder="Enxofre" />
+        </mat-form-field>
+        <h3 class="cardIdeal">Ideal 9,0</h3>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card>
+      <mat-card-title>Alumínio</mat-card-title>
+      <mat-card-content>
+        <h3 class="cardLabel">Alumínio:</h3>
+        <mat-form-field appearance="outline">
+          <mat-label>Alumínio</mat-label>
+            <input matInput formControlName="aluminio" placeholder="Alumínio" />
+        </mat-form-field>
+        <h3 class="cardIdeal">Ideal 0,0</h3>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card>
+      <mat-card-title>H + AL</mat-card-title>
+      <mat-card-content>
+        <h3 class="cardLabel">H + AL:</h3>
+        <mat-form-field appearance="outline">
+          <mat-label>H + AL</mat-label>
+            <input matInput formControlName="hal" placeholder="H + AL" />
+        </mat-form-field>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+
+
 </form>
