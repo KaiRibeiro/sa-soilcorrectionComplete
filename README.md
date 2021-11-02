@@ -18,7 +18,11 @@ No momento a tela principal possui uma barra no topo com um logo do IDR-PR e o n
 ## Correção de Solo
 ![Home](pics/correcao.PNG)
 ![Home](pics/correcao2.PNG)
-No momento a tela de correção de solo possui o formulário de dados gerais e o formulário de teores. Também foram separados entre guias as possíveis novas telas.
+![Home](pics/correcao3.PNG)
+A tela de correção de solo possui o formulário de dados gerais e o formulário de teores. Também foram separados entre guias as possíveis novas telas.
+Ao selecionar a textura de solo, os valores ideais para os teores serão preenchidos.
+Botão Salvar é flutuante.
+Ao preencher os dados e clicar no botão salvar, a tela irá rolar até os resultados de S cmol, CTC cmol e V% atual nos quais serão preenchidos com valores falsos.
 
 
 ## Iniciar Projeto
