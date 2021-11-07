@@ -20,6 +20,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatCardModule } from '@angular/material/card';
+import { PhosphorusCorrectionComponent } from './core/phosphorus-correction/phosphorus-correction.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { MatCardModule } from '@angular/material/card';
     HomeComponent,
     GeneralDataComponent,
     SoilCorrectionComponent,
+    PhosphorusCorrectionComponent,
   ],
   imports: [
     BrowserModule,

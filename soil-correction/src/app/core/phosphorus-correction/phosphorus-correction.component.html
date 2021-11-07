@@ -1,0 +1,140 @@
+<form
+  class="phosphorusCorrection"
+  [formGroup]="phosphorusCorrectionForm"
+  fxLayout="column"
+  fxLayoutAlign="center center"
+  (ngSubmit)="corrigir()"
+>
+  <div fxLayout="column" fxLayoutAlign="center center">
+    <h1>Correção/Recuperação de Fósforo</h1>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+    <span>Teor de Fósforo a atingir: </span>
+    <mat-form-field appearance="outline">
+      <mat-label>Teor a atingir mg.dm3</mat-label>
+      <input
+        required
+        matInput
+        type="number"
+        formControlName="teor"
+        placeholder="Teor a atingir mg.dm3"
+      />
+    </mat-form-field>
+    <span>Fonte de Fósforo a utilizar:</span>
+    <mat-form-field appearance="outline">
+      <mat-label>Fonte de Fósforo</mat-label>
+      <mat-select
+        required
+        formControlName="fonteFosforo"
+        name="Textura De Solo"
+      >
+        <mat-option [value]="this.fonteFosforo.Superfosfato_Simples">
+          Superfosfato Simples
+        </mat-option>
+        <mat-option [value]="this.fonteFosforo.Superfosfato_Triplo">
+          Superfosfato Triplo
+        </mat-option>
+        <mat-option [value]="this.fonteFosforo.MAP"> MAP </mat-option>
+        <mat-option [value]="this.fonteFosforo.DAP"> DAP </mat-option>
+        <mat-option [value]="this.fonteFosforo.Yoorin"> Yoorin </mat-option>
+        <mat-option [value]="this.fonteFosforo.Fosfato_Arad">
+          Fosfato Arad
+        </mat-option>
+        <mat-option [value]="this.fonteFosforo.Fosfato_Gafsa">
+          Fosfato Gafsa
+        </mat-option>
+        <mat-option [value]="this.fonteFosforo.Fosfato_Daoui">
+          Fosfato Daoui
+        </mat-option>
+        <mat-option [value]="this.fonteFosforo.Fosf_Patos_Minas">
+          Fosfato Patos Minas
+        </mat-option>
+        <mat-option [value]="this.fonteFosforo.Escoria_de_Thomas">
+          Escória de Thomas
+        </mat-option>
+        <mat-option [value]="this.fonteFosforo.Acido_Fosforico">
+          Ácido Fosfórico
+        </mat-option>
+        <mat-option [value]="this.fonteFosforo.Multif_Magnesiano">
+          Multifosfato Magnesiano
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Custo R$</mat-label>
+      <input
+        required
+        matInput
+        type="number"
+        formControlName="custoFonte"
+        placeholder="Custo R$"
+      />
+    </mat-form-field>
+    <span>Eficiência do fósforo %: </span>
+    <mat-form-field appearance="outline">
+      <mat-label>Eficiência do fósforo %:</mat-label>
+      <input
+        required
+        matInput
+        type="number"
+        formControlName="eficiencia"
+        placeholder="Eficiência do fósforo %"
+      />
+      <mat-hint>OBS. Sugerimos uma eficiência entre 70% a 90%</mat-hint>
+    </mat-form-field>
+  </div>
+  <button class="btnSalvar" type="submit" mat-raised-button color="primary">Corrigir</button>
+</form>
+
+<div fxLayout="row" fxLayoutAlign="space-evenly center">
+  <h2>
+    Quantidade a aplicar:
+    <mat-form-field appearance="outline">
+      <mat-label>Qnt a aplicar</mat-label>
+      <input
+        matInput
+        [value]="this.results.qntAplicar"
+        readonly
+      />
+      <mat-hint>kg/hectare</mat-hint>
+    </mat-form-field>
+  </h2>
+  <h2>
+    Custo - R$/ha:
+    <mat-form-field appearance="outline">
+      <mat-label>Custo - R$/ha</mat-label>
+      <input
+        matInput
+        [value]="this.results.custoHa"
+        readonly
+      />
+      <mat-hint>R$/ha</mat-hint>
+    </mat-form-field>
+  </h2>
+</div>
+
+<div fxLayout="column" fxLayoutAlign="center center">
+  <mat-card>
+    <mat-card-title>Essa correção de FÓSFORO, fornecerá também (kg/ha):</mat-card-title>
+    <mat-card-content  fxLayout="row" fxLayoutAlign="center center">
+      <h3 class="cardLabel">{{this.results.nutrienteA}}</h3>
+      <mat-form-field appearance="outline">
+        <mat-label>{{this.results.nutrienteA}}</mat-label>
+        <input
+        matInput
+        [value]="this.results.qntNutrienteA"
+        readonly
+      />
+      </mat-form-field>
+      <h3 class="cardLabel">{{this.results.nutrienteB}}</h3>
+      <mat-form-field appearance="outline">
+        <mat-label>{{this.results.nutrienteB}}</mat-label>
+        <input
+        matInput
+        [value]="this.results.qntNutrienteB"
+        readonly
+      />
+      </mat-form-field>
+    </mat-card-content>
+  </mat-card>
+</div>
