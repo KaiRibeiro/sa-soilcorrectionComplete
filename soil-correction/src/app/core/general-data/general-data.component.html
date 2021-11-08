@@ -16,12 +16,12 @@
     <span>Produtor: </span>
     <mat-form-field appearance="outline">
       <mat-label>Produtor</mat-label>
-      <input required matInput formControlName="produtor" placeholder="Produtor" />
+      <input class="produtor"  required matInput formControlName="produtor" placeholder="Produtor" />
     </mat-form-field>
     <span>Data: </span>
     <mat-form-field appearance="outline">
       <mat-label>Data</mat-label>
-      <input required matInput formControlName="data" [matDatepicker]="picker" />
+      <input class="data" required matInput formControlName="data" [matDatepicker]="picker" />
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
@@ -31,17 +31,17 @@
     <span>Município: </span>
     <mat-form-field appearance="outline">
       <mat-label>Município</mat-label>
-      <input required matInput formControlName="municipio" placeholder="Município" />
+      <input class="municipio" required matInput formControlName="municipio" placeholder="Município" />
     </mat-form-field>
     <span>Lote: </span>
     <mat-form-field appearance="outline">
       <mat-label>Lote</mat-label>
-      <input required matInput formControlName="lote" placeholder="Lote" />
+      <input class="lote" required matInput formControlName="lote" placeholder="Lote" />
     </mat-form-field>
     <span>Área Total (ha): </span>
     <mat-form-field appearance="outline">
       <mat-label>Área Total (ha)</mat-label>
-      <input required
+      <input class="areaTotal" required
         matInput
         formControlName="areaTotal"
         placeholder="Área Total (ha)"
@@ -53,12 +53,12 @@
     <span>Talhão: </span>
     <mat-form-field appearance="outline">
       <mat-label>Talhão</mat-label>
-      <input required matInput formControlName="talhao" placeholder="Talhão" />
+      <input class="talhao" required matInput formControlName="talhao" placeholder="Talhão" />
     </mat-form-field>
     <span>Área do Talhão (ha): </span>
     <mat-form-field appearance="outline">
       <mat-label>Área do Talhão (ha)</mat-label>
-      <input required
+      <input class="areaTalhao" required
         matInput
         formControlName="areaTalhao"
         placeholder="Área do Talhão (ha)"
@@ -67,7 +67,7 @@
     <span>Matrícula do Lote: </span>
     <mat-form-field appearance="outline">
       <mat-label>Matrícula do Lote</mat-label>
-      <input required
+      <input class="matriculaLote" required
         matInput
         formControlName="matriculaLote"
         placeholder="Matrícula do Lote"
@@ -104,7 +104,7 @@
     <span>Responsável Técnico: </span>
     <mat-form-field appearance="outline">
       <mat-label>Responsável Técnico</mat-label>
-      <input required
+      <input class="responsavelTecnico" required
         matInput
         formControlName="responsavelTecnico"
         placeholder="Responsável Técnico"
@@ -113,7 +113,7 @@
     <span>Profundidade da amostra de solos (cm): </span>
     <mat-form-field appearance="outline">
       <mat-label>Profundidade da amostra de solos (cm)</mat-label>
-      <input required
+      <input class="profundidadeAmostra" required
         matInput
         formControlName="profundidadeAmostra"
         placeholder="Profundidade da amostra de solos (cm)"
@@ -122,7 +122,7 @@
     <span>Resultado da análise de solos Nº: </span>
     <mat-form-field appearance="outline">
       <mat-label>Resultado da análise de solos Nº</mat-label>
-      <input required
+      <input class="resultNum" required
         matInput
         formControlName="resultNum"
         placeholder="Resultado da análise de solos Nº"
@@ -141,7 +141,7 @@
         <h3 class="cardLabel">Fósforo:</h3>
         <mat-form-field appearance="outline">
           <mat-label>Fósforo</mat-label>
-          <input required matInput formControlName="fosforo" placeholder="Fósforo" />
+          <input class="fosforo" required matInput formControlName="fosforo" placeholder="Fósforo" />
         </mat-form-field>
         <h3 class="cardIdeal">Ideal: <span>{{this.generalForm.value.texturaSolo === this.tiposSolo.ARGILOSO ? this.IdeaisSoloArgiloso.fosforo : this.generalForm.value.texturaSolo === this.tiposSolo.TEXTURA_MEDIA ? this.IdeaisSoloMedia.fosforo : "Informe textura do solo"}}</span></h3>
         <h3 class="cardCorrec">Após Correção: 0,0</h3>
@@ -156,7 +156,7 @@
         <h3 class="cardLabel">Potássio:</h3>
         <mat-form-field appearance="outline">
           <mat-label>Potássio</mat-label>
-          <input required matInput formControlName="potassio" placeholder="Potássio" />
+          <input class="potassio" required matInput formControlName="potassio" placeholder="Potássio" />
         </mat-form-field>
         <h3 class="cardIdeal">Ideal: <span>{{this.generalForm.value.texturaSolo === this.tiposSolo.ARGILOSO ? this.IdeaisSoloArgiloso.potassio : this.generalForm.value.texturaSolo === this.tiposSolo.TEXTURA_MEDIA ? this.IdeaisSoloMedia.potassio : "Informe textura do solo"}}</span></h3>
         <h3 class="cardCorrec">Após Correção: 0,0</h3>
@@ -164,7 +164,7 @@
         <h3 class="cardLabel">Cálcio:</h3>
         <mat-form-field appearance="outline">
           <mat-label>Cálcio</mat-label>
-          <input required matInput formControlName="calcio" placeholder="Cálcio" />
+          <input class="calcio" required matInput formControlName="calcio" placeholder="Cálcio" />
         </mat-form-field>
         <h3 class="cardIdeal">Ideal: <span>{{this.generalForm.value.texturaSolo === this.tiposSolo.ARGILOSO ? this.IdeaisSoloArgiloso.calcio : this.generalForm.value.texturaSolo === this.tiposSolo.TEXTURA_MEDIA ? this.IdeaisSoloMedia.calcio : "Informe textura do solo"}}</span></h3>
         <h3 class="cardCorrec">Após Correção: 0,0</h3>
@@ -172,7 +172,7 @@
         <h3 class="cardLabel">Magnésio:</h3>
         <mat-form-field appearance="outline">
           <mat-label>Magnésio</mat-label>
-          <input required matInput formControlName="magnesio" placeholder="Magnésio" />
+          <input class="magnesio" required matInput formControlName="magnesio" placeholder="Magnésio" />
         </mat-form-field>
         <h3 class="cardIdeal">Ideal: <span>{{this.generalForm.value.texturaSolo === this.tiposSolo.ARGILOSO ? this.IdeaisSoloArgiloso.magnesio : this.generalForm.value.texturaSolo === this.tiposSolo.TEXTURA_MEDIA ? this.IdeaisSoloMedia.magnesio : "Informe textura do solo"}}</span></h3>
         <h3 class="cardCorrec">Após Correção: 0,0</h3>
@@ -185,7 +185,7 @@
         <h3 class="cardLabel">Enxofre:</h3>
         <mat-form-field appearance="outline">
           <mat-label>Enxofre</mat-label>
-          <input required matInput formControlName="enxofre" placeholder="Enxofre" />
+          <input class="enxofre" required matInput formControlName="enxofre" placeholder="Enxofre" />
         </mat-form-field>
         <h3 class="cardIdeal">Ideal: <span>{{this.generalForm.value.texturaSolo === this.tiposSolo.ARGILOSO ? this.IdeaisSoloArgiloso.enxofre : this.generalForm.value.texturaSolo === this.tiposSolo.TEXTURA_MEDIA ? this.IdeaisSoloMedia.enxofre : "Informe textura do solo"}}</span></h3>
       </mat-card-content>
@@ -197,7 +197,7 @@
         <h3 class="cardLabel">Alumínio:</h3>
         <mat-form-field appearance="outline">
           <mat-label>Alumínio</mat-label>
-          <input required matInput formControlName="aluminio" placeholder="Alumínio" />
+          <input class="aluminio" required matInput formControlName="aluminio" placeholder="Alumínio" />
         </mat-form-field>
         <h3 class="cardIdeal">Ideal: <span>{{this.generalForm.value.texturaSolo === this.tiposSolo.ARGILOSO ? this.IdeaisSoloArgiloso.aluminio : this.generalForm.value.texturaSolo === this.tiposSolo.TEXTURA_MEDIA ? this.IdeaisSoloMedia.aluminio : "Informe textura do solo"}}</span></h3>
       </mat-card-content>
@@ -209,7 +209,7 @@
         <h3 class="cardLabel">H + AL:</h3>
         <mat-form-field appearance="outline">
           <mat-label>H + AL</mat-label>
-          <input required matInput formControlName="hal" placeholder="H + AL" />
+          <input class="hal" required matInput formControlName="hal" placeholder="H + AL" />
         </mat-form-field>
       </mat-card-content>
     </mat-card>
@@ -220,17 +220,17 @@
   <h2>
     S cmol:
     <mat-form-field appearance="outline">
-      <input matInput [value]="this.results.scmol" [disabled]="!this.results.scmol" readonly placeholder="S cmol" />
+      <input class="scmol" matInput [value]="this.results.scmol" [disabled]="!this.results.scmol" readonly placeholder="S cmol" />
     </mat-form-field>
   </h2>
   <h2>CTC cmol:
     <mat-form-field appearance="outline">
-      <input matInput [value]="this.results.ctccmol" [disabled]="!this.results.ctccmol" readonly placeholder="CTC cmol" />
+      <input class="ctccmol" matInput [value]="this.results.ctccmol" [disabled]="!this.results.ctccmol" readonly placeholder="CTC cmol" />
     </mat-form-field>
   </h2>
   <h2>V% atual:
     <mat-form-field appearance="outline">
-      <input matInput [value]="this.results.vatual" [disabled]="!this.results.vatual" readonly placeholder="V% atual" />
+      <input class="vatual" matInput [value]="this.results.vatual" [disabled]="!this.results.vatual" readonly placeholder="V% atual" />
     </mat-form-field>
   </h2>
 </div>
