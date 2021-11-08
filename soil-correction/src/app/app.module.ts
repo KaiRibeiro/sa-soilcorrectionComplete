@@ -21,6 +21,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatCardModule } from '@angular/material/card';
 import { PhosphorusCorrectionComponent } from './core/phosphorus-correction/phosphorus-correction.component';
+import { PotassiumCorrectionComponent } from './core/potassium-correction/potassium-correction.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { PhosphorusCorrectionComponent } from './core/phosphorus-correction/phos
     GeneralDataComponent,
     SoilCorrectionComponent,
     PhosphorusCorrectionComponent,
+    PotassiumCorrectionComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,103 @@
+<form
+  class="phosphorusCorrection"
+  [formGroup]="potassiumCorrectionForm"
+  fxLayout="column"
+  fxLayoutAlign="center center"
+  (ngSubmit)="corrigir()"
+>
+  <div fxLayout="column" fxLayoutAlign="center center">
+    <h1>Correção/Recuperação de Potássio</h1>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+    <span>Participação atual do POTÁSSIO na CTC do solo:</span>
+    <mat-form-field appearance="outline">
+      <mat-label>Participação Atual</mat-label>
+      <input
+      matInput
+      [value]="this.participacaoAtual"
+      readonly
+    />
+    </mat-form-field>
+    <span>Participação do Potássio na CTC, desejada:</span>
+    <mat-form-field appearance="outline">
+      <mat-label>Participação Desejada</mat-label>
+      <input
+        required
+        matInput
+        type="number"
+        formControlName="participacaoDesejada"
+        placeholder="Participação Desejada"
+      />
+      <mat-hint>Participação ideal do Potássio na CTC: 3%</mat-hint>
+    </mat-form-field>
+    <span>Fonte de Potássio a utilizar:</span>
+    <mat-form-field appearance="outline">
+      <mat-label>Fonte de Potássio</mat-label>
+      <mat-select
+        required
+        formControlName="fontePotassio"
+        name="Fonte de Potássio"
+      >
+        <mat-option [value]="this.fontePotassio.Cloreto_Potassio">
+          Cloreto de Potassio
+        </mat-option>
+        <mat-option [value]="this.fontePotassio.Sulfato_Potassio">
+          Superfosfato Triplo
+        </mat-option>
+        <mat-option [value]="this.fontePotassio.Sulfato_Potassio_Mag">
+          Sulfato de Potássio/Magnésio
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Custo R$</mat-label>
+      <input
+        required
+        matInput
+        type="number"
+        formControlName="custoFonte"
+        placeholder="Custo R$"
+      />
+    </mat-form-field>
+    <span>Eficiência do fósforo %: </span>
+    <mat-form-field appearance="outline">
+      <mat-label>Eficiência do fósforo %:</mat-label>
+      <input
+        required
+        matInput
+        type="number"
+        formControlName="eficiencia"
+        placeholder="Eficiência do fósforo %"
+      />
+      <mat-hint>OBS. Sugerimos uma eficiência entre 70% a 90%</mat-hint>
+    </mat-form-field>
+  </div>
+  <button class="btnSalvar" type="submit" mat-raised-button color="primary">Corrigir</button>
+</form>
+
+<div fxLayout="row" fxLayoutAlign="space-evenly center">
+  <h2>
+    Quantidade a aplicar:
+    <mat-form-field appearance="outline">
+      <mat-label>Qnt a aplicar</mat-label>
+      <input
+        matInput
+        [value]="this.results.qntAplicar"
+        readonly
+      />
+      <mat-hint>kg/hectare</mat-hint>
+    </mat-form-field>
+  </h2>
+  <h2>
+    Custo - R$/ha:
+    <mat-form-field appearance="outline">
+      <mat-label>Custo - R$/ha</mat-label>
+      <input
+        matInput
+        [value]="this.results.custoHa"
+        readonly
+      />
+      <mat-hint>R$/ha</mat-hint>
+    </mat-form-field>
+  </h2>
+</div>
