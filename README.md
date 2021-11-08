@@ -6,7 +6,7 @@ Elaboração de uma interface gráfica para o projeto [Soil Correction](https://
 
 A interface gráfica foi feita utilizando o Angular Framework.
 
-O projeto segue as boas práticas apresentadas no [styleguide](https://angular.io/guide/styleguide#folders-by-feature-structure) do Angular Framework.
+O projeto segue as boas práticas apresentadas no [styleguide](https://angular.io/guide/styleguide) do Angular Framework.
 
 Estrutura de pastas baseada no folders-by-feature do [styleguide](https://angular.io/guide/styleguide#folders-by-feature-structure) do Angular Framework.
 
@@ -92,7 +92,7 @@ Rode os testes.
 npm run test
 ```
 
-Após isso os testes iniciaram no terminal, caso todos passem verá a seguinte tela no terminal:
+Após isso os testes iniciarão no terminal, caso todos passem verá a seguinte tela no terminal:
 ![Tests](pics/tests.PNG)
 
 Também serão gerados na pasta "cypress/videos" as gravações das execuções dos testes:
