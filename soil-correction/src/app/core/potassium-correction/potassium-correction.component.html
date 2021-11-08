@@ -11,10 +11,10 @@
   <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
     <span>Participação atual do POTÁSSIO na CTC do solo:</span>
     <mat-form-field appearance="outline">
-      <mat-label>Participação Atual</mat-label>
       <input
       matInput
       [value]="this.participacaoAtual"
+      [disabled]="!this.participacaoAtual"
       readonly
     />
     </mat-form-field>
@@ -59,18 +59,6 @@
         placeholder="Custo R$"
       />
     </mat-form-field>
-    <span>Eficiência do fósforo %: </span>
-    <mat-form-field appearance="outline">
-      <mat-label>Eficiência do fósforo %:</mat-label>
-      <input
-        required
-        matInput
-        type="number"
-        formControlName="eficiencia"
-        placeholder="Eficiência do fósforo %"
-      />
-      <mat-hint>OBS. Sugerimos uma eficiência entre 70% a 90%</mat-hint>
-    </mat-form-field>
   </div>
   <button class="btnSalvar" type="submit" mat-raised-button color="primary">Corrigir</button>
 </form>
@@ -79,10 +67,10 @@
   <h2>
     Quantidade a aplicar:
     <mat-form-field appearance="outline">
-      <mat-label>Qnt a aplicar</mat-label>
       <input
         matInput
         [value]="this.results.qntAplicar"
+        [disabled]="!this.results.qntAplicar"
         readonly
       />
       <mat-hint>kg/hectare</mat-hint>
@@ -91,10 +79,10 @@
   <h2>
     Custo - R$/ha:
     <mat-form-field appearance="outline">
-      <mat-label>Custo - R$/ha</mat-label>
       <input
         matInput
         [value]="this.results.custoHa"
+        [disabled]="!this.results.custoHa"
         readonly
       />
       <mat-hint>R$/ha</mat-hint>

@@ -22,6 +22,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatCardModule } from '@angular/material/card';
 import { PhosphorusCorrectionComponent } from './core/phosphorus-correction/phosphorus-correction.component';
 import { PotassiumCorrectionComponent } from './core/potassium-correction/potassium-correction.component';
+import { CalciumMagnesiumCorrectionComponent } from './core/calcium-magnesium-correction/calcium-magnesium-correction.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { PotassiumCorrectionComponent } from './core/potassium-correction/potass
     SoilCorrectionComponent,
     PhosphorusCorrectionComponent,
     PotassiumCorrectionComponent,
+    CalciumMagnesiumCorrectionComponent,
   ],
   imports: [
     BrowserModule,

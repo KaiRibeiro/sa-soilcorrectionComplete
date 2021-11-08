@@ -22,6 +22,7 @@ export class PhosphorusCorrectionComponent implements OnInit {
     teor: any,
     fonteFosforo: any,
     custoFonte: any,
+    eficiencia: any,
   }
 
   constructor(private formBuilder: FormBuilder) {
@@ -29,6 +30,7 @@ export class PhosphorusCorrectionComponent implements OnInit {
       teor: [null, Validators.required],
       fonteFosforo: [null, Validators.required],
       custoFonte: [null, Validators.required],
+      eficiencia: [null, Validators.required],
     });
   }
 
@@ -50,6 +52,7 @@ export class PhosphorusCorrectionComponent implements OnInit {
       teor: this.phosphorusCorrectionForm.controls['teor'].value,
       fonteFosforo: this.phosphorusCorrectionForm.controls['fonteFosforo'].value,
       custoFonte: this.phosphorusCorrectionForm.controls['custoFonte'].value,
+      eficiencia:this.phosphorusCorrectionForm.controls['eficiencia'].value,
     };
     this.results = {
       custoHa: 111,

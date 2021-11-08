@@ -1,0 +1,186 @@
+<form
+  class="calciumMagnesiumCorrection"
+  [formGroup]="calciumMagnesiumCorrectionForm"
+  fxLayout="column"
+  fxLayoutAlign="center center"
+  (ngSubmit)="corrigir()"
+>
+  <div fxLayout="column" fxLayoutAlign="center center">
+    <h1>Correção/Recuperação de Cálcio e Magnésio</h1>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+      <mat-card>
+        <mat-card-title>Cálcio</mat-card-title>
+        <mat-card-content>
+          <h3 class="cardLabel">Participação atual na CTC do solo:</h3>
+          <mat-form-field appearance="outline">
+            <input
+            matInput
+            [value]="participacaoAtualCalcio"
+            [disabled]="!participacaoAtualCalcio"
+            readonly
+          />
+            <mat-hint>Ideal 45 a 55%</mat-hint>
+          </mat-form-field>
+          <h3 class="cardLabel">Após as correções:</h3>
+          <mat-form-field appearance="outline">
+            <input
+            matInput
+            [value]="this.results.calcioApos"
+            [disabled]="!this.results.calcioApos"
+            readonly
+          />
+          </mat-form-field>
+          <h3 class="cardLabel">% de participação do CÁLCIO na CTC, desejada:</h3>
+          <mat-form-field appearance="outline">
+            <mat-label>Participação Desejada</mat-label>
+            <input required matInput type="number" formControlName="participacaoDesejadaCalcio" placeholder="Participação Desejada" />
+          </mat-form-field>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+      <mat-card>
+        <mat-card-title>Magnésio</mat-card-title>
+        <mat-card-content>
+          <h3 class="cardLabel">Participação atual na CTC do solo:</h3>
+          <mat-form-field appearance="outline">
+            <input
+            matInput
+            [value]="participacaoAtualMagnesio"
+            [disabled]="!participacaoAtualMagnesio"
+            readonly
+          />
+            <mat-hint>Ideal 10 a 15%</mat-hint>
+          </mat-form-field>
+          <h3 class="cardLabel">Após as correções:</h3>
+          <mat-form-field appearance="outline">
+            <input
+            matInput
+            [value]="this.results.magnesioApos"
+            [disabled]="!this.results.magnesioApos"
+            readonly
+          />
+          </mat-form-field>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+  <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="10px">
+    <span>Fonte de Corretivo a usar:</span>
+    <mat-form-field appearance="outline">
+      <mat-label>Fonte de Corretivo a usar:</mat-label>
+      <mat-select
+        required
+        formControlName="fonteCorretivo"
+        name="Fonte de Corretivo"
+      >
+        <mat-option [value]="this.fontesCorretivo.Calcario_Dolomitico">
+          Calcário Dolomítico
+        </mat-option>
+        <mat-option [value]="this.fontesCorretivo.Calcario_Calcitico">
+          Calcário Calcítico
+        </mat-option>
+        <mat-option [value]="this.fontesCorretivo.Calcario_Concha">
+          Calcário de Concha
+        </mat-option>
+        <mat-option [value]="this.fontesCorretivo.Gesso_Agricola">
+          Gesso Agrícola
+        </mat-option>
+        <mat-option [value]="this.fontesCorretivo.Hidroxido_Calcio">
+          Hidróxido de Cálcio
+        </mat-option>
+        <mat-option [value]="this.fontesCorretivo.Calcario_Magnesiano">
+          Calcário Magnesiano
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Custo R$</mat-label>
+      <input
+        required
+        matInput
+        type="number"
+        formControlName="custoFonte"
+        placeholder="Custo R$"
+      />
+    </mat-form-field>
+    <span>PRNT</span>
+    <mat-form-field appearance="outline">
+      <mat-label>PRNT %</mat-label>
+      <input required
+        matInput
+        type="number"
+        formControlName="prnt"
+        placeholder="PRNT"
+      />
+    </mat-form-field>
+    <span>Teor de CaO do corretivo:</span>
+    <mat-form-field appearance="outline">
+      <mat-label>Teor de CaO %</mat-label>
+      <input required
+        matInput
+        type="number"
+        formControlName="teorCAO"
+        placeholder="Teor de CaO"
+      />
+    </mat-form-field>
+  </div>
+  <button class="btnSalvar" type="submit" mat-raised-button color="primary">Corrigir</button>
+</form>
+
+<div fxLayout="row" fxLayoutAlign="space-evenly center">
+  <h2>
+    Quantidade a aplicar:
+    <mat-form-field appearance="outline">
+      <input
+        matInput
+        [value]="this.results.qntAplicar"
+        [disabled]="!this.results.qntAplicar"
+        readonly
+      />
+      <mat-hint>Ton./ha</mat-hint>
+    </mat-form-field>
+  </h2>
+  <h2>
+    Custo - R$/ha:
+    <mat-form-field appearance="outline">
+      <input
+        matInput
+        [value]="this.results.custoHa"
+        [disabled]="!this.results.custoHa"
+        readonly
+      />
+    </mat-form-field>
+  </h2>
+</div>
+
+<div fxLayout="row" fxLayoutAlign="space-evenly center">
+  <h1>V%</h1>
+  <h2>
+    Atual:
+    <mat-form-field appearance="outline">
+      <input
+        matInput
+        [value]="this.vAtual"
+        [disabled]="!this.vAtual"
+        readonly
+      />
+      <mat-hint>Ideal: 60 a 70%</mat-hint>
+    </mat-form-field>
+  </h2>
+  <h2>
+    Após Correções:
+    <mat-form-field appearance="outline">
+      <input
+        matInput
+        [value]="this.results.vApos"
+        [disabled]="!this.results.vApos"
+        readonly
+      />
+    </mat-form-field>
+  </h2>
+</div>
+

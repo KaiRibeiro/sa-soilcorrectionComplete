@@ -220,20 +220,17 @@
   <h2>
     S cmol:
     <mat-form-field appearance="outline">
-      <mat-label>S cmol</mat-label>
-      <input matInput [value]="this.results.scmol" readonly placeholder="S cmol" />
+      <input matInput [value]="this.results.scmol" [disabled]="!this.results.scmol" readonly placeholder="S cmol" />
     </mat-form-field>
   </h2>
   <h2>CTC cmol:
     <mat-form-field appearance="outline">
-      <mat-label>CTC cmol</mat-label>
-      <input matInput [value]="this.results.ctccmol" readonly placeholder="CTC cmol" />
+      <input matInput [value]="this.results.ctccmol" [disabled]="!this.results.ctccmol" readonly placeholder="CTC cmol" />
     </mat-form-field>
   </h2>
   <h2>V% atual:
     <mat-form-field appearance="outline">
-      <mat-label>V% atual</mat-label>
-      <input matInput [value]="this.results.vatual" readonly placeholder="V% atual" />
+      <input matInput [value]="this.results.vatual" [disabled]="!this.results.vatual" readonly placeholder="V% atual" />
     </mat-form-field>
   </h2>
 </div>

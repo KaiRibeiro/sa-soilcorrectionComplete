@@ -90,10 +90,10 @@
   <h2>
     Quantidade a aplicar:
     <mat-form-field appearance="outline">
-      <mat-label>Qnt a aplicar</mat-label>
       <input
         matInput
         [value]="this.results.qntAplicar"
+        [disabled]="!this.results.qntAplicar"
         readonly
       />
       <mat-hint>kg/hectare</mat-hint>
@@ -102,10 +102,10 @@
   <h2>
     Custo - R$/ha:
     <mat-form-field appearance="outline">
-      <mat-label>Custo - R$/ha</mat-label>
       <input
         matInput
         [value]="this.results.custoHa"
+        [disabled]="!this.results.custoHa"
         readonly
       />
       <mat-hint>R$/ha</mat-hint>
@@ -119,19 +119,19 @@
     <mat-card-content  fxLayout="row" fxLayoutAlign="center center">
       <h3 class="cardLabel">{{this.results.nutrienteA}}</h3>
       <mat-form-field appearance="outline">
-        <mat-label>{{this.results.nutrienteA}}</mat-label>
         <input
         matInput
         [value]="this.results.qntNutrienteA"
+        [disabled]="!this.results.qntNutrienteA"
         readonly
       />
       </mat-form-field>
       <h3 class="cardLabel">{{this.results.nutrienteB}}</h3>
       <mat-form-field appearance="outline">
-        <mat-label>{{this.results.nutrienteB}}</mat-label>
         <input
         matInput
         [value]="this.results.qntNutrienteB"
+        [disabled]="!this.results.qntNutrienteB"
         readonly
       />
       </mat-form-field>
