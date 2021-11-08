@@ -13,6 +13,7 @@
     <mat-form-field appearance="outline">
       <input
       matInput
+      class="participacaoAtual"
       [value]="this.participacaoAtual"
       [disabled]="!this.participacaoAtual"
       readonly
@@ -24,6 +25,7 @@
       <input
         required
         matInput
+        class="participacaoDesejada"
         type="number"
         formControlName="participacaoDesejada"
         placeholder="Participação Desejada"
@@ -54,6 +56,7 @@
       <input
         required
         matInput
+        class="custoFonte"
         type="number"
         formControlName="custoFonte"
         placeholder="Custo R$"
@@ -69,6 +72,7 @@
     <mat-form-field appearance="outline">
       <input
         matInput
+        class="qntAplicar"
         [value]="this.results.qntAplicar"
         [disabled]="!this.results.qntAplicar"
         readonly
@@ -81,6 +85,7 @@
     <mat-form-field appearance="outline">
       <input
         matInput
+        class="custoHa"
         [value]="this.results.custoHa"
         [disabled]="!this.results.custoHa"
         readonly

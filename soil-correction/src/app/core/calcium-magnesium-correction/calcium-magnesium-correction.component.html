@@ -16,6 +16,7 @@
           <h3 class="cardLabel">Participação atual na CTC do solo:</h3>
           <mat-form-field appearance="outline">
             <input
+            class="participacaoAtualCalcio"
             matInput
             [value]="participacaoAtualCalcio"
             [disabled]="!participacaoAtualCalcio"
@@ -27,6 +28,7 @@
           <mat-form-field appearance="outline">
             <input
             matInput
+            class="calcioApos"
             [value]="this.results.calcioApos"
             [disabled]="!this.results.calcioApos"
             readonly
@@ -35,7 +37,7 @@
           <h3 class="cardLabel">% de participação do CÁLCIO na CTC, desejada:</h3>
           <mat-form-field appearance="outline">
             <mat-label>Participação Desejada</mat-label>
-            <input required matInput type="number" formControlName="participacaoDesejadaCalcio" placeholder="Participação Desejada" />
+            <input required matInput class="participacaoDesejadaCalcio" type="number" formControlName="participacaoDesejadaCalcio" placeholder="Participação Desejada" />
           </mat-form-field>
         </mat-card-content>
       </mat-card>
@@ -49,6 +51,7 @@
           <mat-form-field appearance="outline">
             <input
             matInput
+            class="participacaoAtualMagnesio"
             [value]="participacaoAtualMagnesio"
             [disabled]="!participacaoAtualMagnesio"
             readonly
@@ -59,6 +62,7 @@
           <mat-form-field appearance="outline">
             <input
             matInput
+            class="magnesioApos"
             [value]="this.results.magnesioApos"
             [disabled]="!this.results.magnesioApos"
             readonly
@@ -102,6 +106,7 @@
       <input
         required
         matInput
+        class="custoFonte"
         type="number"
         formControlName="custoFonte"
         placeholder="Custo R$"
@@ -113,6 +118,7 @@
       <input required
         matInput
         type="number"
+        class="prnt"
         formControlName="prnt"
         placeholder="PRNT"
       />
@@ -123,6 +129,7 @@
       <input required
         matInput
         type="number"
+        class="teorCAO"
         formControlName="teorCAO"
         placeholder="Teor de CaO"
       />
@@ -137,6 +144,7 @@
     <mat-form-field appearance="outline">
       <input
         matInput
+        class="qntAplicar"
         [value]="this.results.qntAplicar"
         [disabled]="!this.results.qntAplicar"
         readonly
@@ -149,6 +157,7 @@
     <mat-form-field appearance="outline">
       <input
         matInput
+        class="custoHa"
         [value]="this.results.custoHa"
         [disabled]="!this.results.custoHa"
         readonly
@@ -164,6 +173,7 @@
     <mat-form-field appearance="outline">
       <input
         matInput
+        class="vAtual"
         [value]="this.vAtual"
         [disabled]="!this.vAtual"
         readonly
@@ -176,6 +186,7 @@
     <mat-form-field appearance="outline">
       <input
         matInput
+        class="vApos"
         [value]="this.results.vApos"
         [disabled]="!this.results.vApos"
         readonly

@@ -15,6 +15,7 @@
       <input
         required
         matInput
+        class="teor"
         type="number"
         formControlName="teor"
         placeholder="Teor a atingir mg.dm3"
@@ -65,6 +66,7 @@
       <input
         required
         matInput
+        class="custoFonte"
         type="number"
         formControlName="custoFonte"
         placeholder="Custo R$"
@@ -77,6 +79,7 @@
         required
         matInput
         type="number"
+        class="eficiencia"
         formControlName="eficiencia"
         placeholder="Eficiência do fósforo %"
       />
@@ -92,6 +95,7 @@
     <mat-form-field appearance="outline">
       <input
         matInput
+        class="qntAplicar"
         [value]="this.results.qntAplicar"
         [disabled]="!this.results.qntAplicar"
         readonly
@@ -104,6 +108,7 @@
     <mat-form-field appearance="outline">
       <input
         matInput
+        class="custoHa"
         [value]="this.results.custoHa"
         [disabled]="!this.results.custoHa"
         readonly
@@ -117,18 +122,20 @@
   <mat-card>
     <mat-card-title>Essa correção de FÓSFORO, fornecerá também (kg/ha):</mat-card-title>
     <mat-card-content  fxLayout="row" fxLayoutAlign="center center">
-      <h3 class="cardLabel">{{this.results.nutrienteA}}</h3>
+      <h3 class="nutrienteA">{{this.results.nutrienteA}}</h3>
       <mat-form-field appearance="outline">
         <input
         matInput
+        class="qntNutrienteA"
         [value]="this.results.qntNutrienteA"
         [disabled]="!this.results.qntNutrienteA"
         readonly
       />
       </mat-form-field>
-      <h3 class="cardLabel">{{this.results.nutrienteB}}</h3>
+      <h3 class="nutrienteB">{{this.results.nutrienteB}}</h3>
       <mat-form-field appearance="outline">
         <input
+        class="qntNutrienteB"
         matInput
         [value]="this.results.qntNutrienteB"
         [disabled]="!this.results.qntNutrienteB"
