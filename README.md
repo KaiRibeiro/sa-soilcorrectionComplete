@@ -140,8 +140,6 @@ node_modules/.bin/cypress cache clear
 node_modules/.bin/cypress install --force
 ```
 
-Linux:
-
 ```bash
 node_modules/.bin/cypress run
 ```
