@@ -97,3 +97,51 @@ Após isso os testes iniciarão no terminal, caso todos passem verá a seguinte 
 
 Também serão gerados na pasta "cypress/videos" as gravações das execuções dos testes:
 ![TestsVideos](pics/testsVideos.PNG)
+
+CASO NÃO FUNCIONAR:
+
+Após o "npi i" execute:
+
+Windows:
+
+```bash
+node_modules\.bin\cypress run
+```
+
+Linux:
+
+```bash
+node_modules/.bin/cypress run
+```
+
+Se isso também nao funcionar utilize:
+
+Windows:
+
+```bash
+node_modules\.bin\cypress cache clear
+```
+
+```bash
+node_modules\.bin\cypress install --force
+```
+
+```bash
+node_modules\.bin\cypress run
+```
+
+Linux:
+
+```bash
+node_modules/.bin/cypress cache clear
+```
+
+```bash
+node_modules/.bin/cypress install --force
+```
+
+Linux:
+
+```bash
+node_modules/.bin/cypress run
+```
