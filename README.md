@@ -1,4 +1,8 @@
-# Soil Correction GUI
+# TODO
+
+Integração da GUI com código em JAVA
+
+## Soil Correction GUI
 
 Elaboração de uma interface gráfica para o projeto [Soil Correction](https://github.com/gabrielcostasilva/sa-soilcorrection) da disciplina de Arquitetura de Software UTFPR.
 
