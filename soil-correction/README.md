@@ -14,14 +14,14 @@ Padrão do código mantido através do [Angular ESLint](https://github.com/angul
 
 ## Tela Principal
 
-![Home](pics/home.PNG)
+![Home](../../pics/home.PNG)
 No momento a tela principal possui uma barra no topo com um logo do IDR-PR e o nome do projeto. Possuí também navegação para a função de correção de solo.
 
 ## Correção de Solo
 
-![Correção1](pics/correcao.PNG)
-![Correção2](pics/correcao2.PNG)
-![Correção3](pics/correcao3.PNG)
+![Correção1](../pics/correcao.PNG)
+![Correção2](../pics/correcao2.PNG)
+![Correção3](../pics/correcao3.PNG)
 A tela de correção de solo possui o componente de dados gerais. Também foram separados entre guias as telas de correção.
 Ao selecionar a textura de solo, os valores ideais para os teores serão preenchidos.
 Botão Salvar é flutuante.
@@ -29,22 +29,22 @@ Ao preencher os dados e clicar no botão salvar, a tela irá rolar até os resul
 
 ## Correção/Recuperação de Fósforo
 
-![Fosforo1](pics/fosforo.PNG)
-![Fosforo2](pics/fosforo2.PNG)
+![Fosforo1](../pics/fosforo.PNG)
+![Fosforo2](../pics/fosforo2.PNG)
 O componente de Correção/Recuperação de Fósforo possúi um formulário para a seleção de Teor de Fósforo a atingir, a Fonte de Fósforo, o custo da fonte e a eficiência do fósforo.
 Ao clicar no botão corrigir serão preenchidos com dados falsos os campos: Quantidade a aplicar, Custo - R$/ha, "Essa correção de FÓSFORO, fornecerá também (kg/ha):"
 
 ## Correção/Recuperação de Potássio
 
-![Potassio1](pics/potassio.PNG)
-![Potassio2](pics/potassio2.PNG)
+![Potassio1](../pics/potassio.PNG)
+![Potassio2](../pics/potassio2.PNG)
 O componente de Correção/Recuperação de Potássio possúi um campo "Participação atual do POTÁSSIO na CTC do solo:" com um valor falso, um formulário para informar a participação desejada de Potássio na CTC, a Fonte de Potássio e o custo da fonte.
 Ao clicar no bottão corrigir serão preenchidos com dados falsos os campos: Quantidade a aplicar, Custo - R$/ha.
 
 ## Correção/Recuperação de Cálcio e Magnésio
 
-![calcioMag1](pics/calcioMag.PNG)
-![calcioMag2](pics/calcioMag2.PNG)
+![calcioMag1](../pics/calcioMag.PNG)
+![calcioMag2](../pics/calcioMag2.PNG)
 O componente de Correção/Recuperação de Cálcio e Magnésio possúi dois "cards", um para Cálcio e outro para Magnésio. O de cálcio possúi 3 campos: Participação atual na CTC do solo com valor falso, Após Correções, % de participação do CÁLCIO na CTC, desejada. Já o de magnésio possui: Participação atual na CTC do solo com valor falso e Após as correções.
 O componente também possui os seguintes campos a preencher: Fonte de Corretivo a usar, Custo da Fonte, PRNT, Teor de CaO do corretivo.
 Ao clicar no bottão corrigir serão preenchidos com dados falsos os campos: Após correção dos dois cards, Quantidade a aplicar, Custo - R$/ha., V% Após Correções.
@@ -93,10 +93,10 @@ npm run test
 ```
 
 Após isso os testes iniciarão no terminal, caso todos passem verá a seguinte tela no terminal:
-![Tests](pics/tests.PNG)
+![Tests](../pics/tests.PNG)
 
 Também serão gerados na pasta "cypress/videos" as gravações das execuções dos testes:
-![TestsVideos](pics/testsVideos.PNG)
+![TestsVideos](../pics/testsVideos.PNG)
 
 CASO NÃO FUNCIONAR:
 
