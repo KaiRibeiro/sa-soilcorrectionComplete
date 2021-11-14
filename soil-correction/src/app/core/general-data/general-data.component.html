@@ -141,7 +141,7 @@
         <h3 class="cardLabel">Fósforo:</h3>
         <mat-form-field appearance="outline">
           <mat-label>Fósforo</mat-label>
-          <input class="fosforo" required matInput formControlName="fosforo" placeholder="Fósforo" />
+          <input type="number" class="fosforo" required matInput formControlName="fosforo" placeholder="Fósforo" />
         </mat-form-field>
         <h3 class="cardIdeal">Ideal: <span>{{this.generalForm.value.texturaSolo === this.tiposSolo.ARGILOSO ? this.IdeaisSoloArgiloso.fosforo : this.generalForm.value.texturaSolo === this.tiposSolo.TEXTURA_MEDIA ? this.IdeaisSoloMedia.fosforo : "Informe textura do solo"}}</span></h3>
         <h3 class="cardCorrec">Após Correção: 0,0</h3>
@@ -156,7 +156,7 @@
         <h3 class="cardLabel">Potássio:</h3>
         <mat-form-field appearance="outline">
           <mat-label>Potássio</mat-label>
-          <input class="potassio" required matInput formControlName="potassio" placeholder="Potássio" />
+          <input type="number" class="potassio" required matInput formControlName="potassio" placeholder="Potássio" />
         </mat-form-field>
         <h3 class="cardIdeal">Ideal: <span>{{this.generalForm.value.texturaSolo === this.tiposSolo.ARGILOSO ? this.IdeaisSoloArgiloso.potassio : this.generalForm.value.texturaSolo === this.tiposSolo.TEXTURA_MEDIA ? this.IdeaisSoloMedia.potassio : "Informe textura do solo"}}</span></h3>
         <h3 class="cardCorrec">Após Correção: 0,0</h3>
@@ -164,7 +164,7 @@
         <h3 class="cardLabel">Cálcio:</h3>
         <mat-form-field appearance="outline">
           <mat-label>Cálcio</mat-label>
-          <input class="calcio" required matInput formControlName="calcio" placeholder="Cálcio" />
+          <input type="number" class="calcio" required matInput formControlName="calcio" placeholder="Cálcio" />
         </mat-form-field>
         <h3 class="cardIdeal">Ideal: <span>{{this.generalForm.value.texturaSolo === this.tiposSolo.ARGILOSO ? this.IdeaisSoloArgiloso.calcio : this.generalForm.value.texturaSolo === this.tiposSolo.TEXTURA_MEDIA ? this.IdeaisSoloMedia.calcio : "Informe textura do solo"}}</span></h3>
         <h3 class="cardCorrec">Após Correção: 0,0</h3>
@@ -172,7 +172,7 @@
         <h3 class="cardLabel">Magnésio:</h3>
         <mat-form-field appearance="outline">
           <mat-label>Magnésio</mat-label>
-          <input class="magnesio" required matInput formControlName="magnesio" placeholder="Magnésio" />
+          <input type="number" class="magnesio" required matInput formControlName="magnesio" placeholder="Magnésio" />
         </mat-form-field>
         <h3 class="cardIdeal">Ideal: <span>{{this.generalForm.value.texturaSolo === this.tiposSolo.ARGILOSO ? this.IdeaisSoloArgiloso.magnesio : this.generalForm.value.texturaSolo === this.tiposSolo.TEXTURA_MEDIA ? this.IdeaisSoloMedia.magnesio : "Informe textura do solo"}}</span></h3>
         <h3 class="cardCorrec">Após Correção: 0,0</h3>
@@ -185,7 +185,7 @@
         <h3 class="cardLabel">Enxofre:</h3>
         <mat-form-field appearance="outline">
           <mat-label>Enxofre</mat-label>
-          <input class="enxofre" required matInput formControlName="enxofre" placeholder="Enxofre" />
+          <input type="number" class="enxofre" required matInput formControlName="enxofre" placeholder="Enxofre" />
         </mat-form-field>
         <h3 class="cardIdeal">Ideal: <span>{{this.generalForm.value.texturaSolo === this.tiposSolo.ARGILOSO ? this.IdeaisSoloArgiloso.enxofre : this.generalForm.value.texturaSolo === this.tiposSolo.TEXTURA_MEDIA ? this.IdeaisSoloMedia.enxofre : "Informe textura do solo"}}</span></h3>
       </mat-card-content>
@@ -197,7 +197,7 @@
         <h3 class="cardLabel">Alumínio:</h3>
         <mat-form-field appearance="outline">
           <mat-label>Alumínio</mat-label>
-          <input class="aluminio" required matInput formControlName="aluminio" placeholder="Alumínio" />
+          <input type="number" class="aluminio" required matInput formControlName="aluminio" placeholder="Alumínio" />
         </mat-form-field>
         <h3 class="cardIdeal">Ideal: <span>{{this.generalForm.value.texturaSolo === this.tiposSolo.ARGILOSO ? this.IdeaisSoloArgiloso.aluminio : this.generalForm.value.texturaSolo === this.tiposSolo.TEXTURA_MEDIA ? this.IdeaisSoloMedia.aluminio : "Informe textura do solo"}}</span></h3>
       </mat-card-content>
@@ -209,7 +209,18 @@
         <h3 class="cardLabel">H + AL:</h3>
         <mat-form-field appearance="outline">
           <mat-label>H + AL</mat-label>
-          <input class="hal" required matInput formControlName="hal" placeholder="H + AL" />
+          <input type="number" class="hal" required matInput formControlName="hal" placeholder="H + AL" />
+        </mat-form-field>
+      </mat-card-content>
+    </mat-card>
+
+    <mat-card>
+      <mat-card-title>M.O.</mat-card-title>
+      <mat-card-content>
+        <h3 class="cardLabel">M.O.:</h3>
+        <mat-form-field appearance="outline">
+          <mat-label>M.O.</mat-label>
+          <input type="number" class="mo" required matInput formControlName="mo" placeholder="M.O" />
         </mat-form-field>
       </mat-card-content>
     </mat-card>
@@ -234,3 +245,18 @@
     </mat-form-field>
   </h2>
 </div>
+
+<div fxLayout="row" fxLayoutAlign="space-evenly center">
+  <h2>M.O. %:
+    <mat-form-field appearance="outline">
+      <input class="moporcento" matInput [value]="this.results.mo" [disabled]="!this.results.mo" readonly placeholder="M.O. %" />
+      <mat-hint>Teor ideal de M.O.: 3,0 a 4,0%</mat-hint>
+    </mat-form-field>
+  </h2>
+  <h2>Carbono:
+    <mat-form-field appearance="outline">
+      <input class="carbono" matInput [value]="this.results.carbono" [disabled]="!this.results.carbono" readonly placeholder="Carbono" />
+    </mat-form-field>
+  </h2>
+</div>
+

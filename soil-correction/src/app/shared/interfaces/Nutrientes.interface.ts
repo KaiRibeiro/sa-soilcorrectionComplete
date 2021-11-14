@@ -1,4 +1,4 @@
-export interface INutrientesCTC {
+export interface INutrientes {
   fosforo: number;
   potassio: number;
   calcio: number;
@@ -6,4 +6,5 @@ export interface INutrientesCTC {
   enxofre: number;
   aluminio: number;
   aluminioHidrogenio: number;
+  mo: number;
 }

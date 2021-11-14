@@ -1,10 +1,12 @@
+import { IResultadoEquilibrioCorrecao } from './../../shared/interfaces/ResultadoEquilibrioCorrecao.interface';
 import { IDadosGerais } from './../../shared/interfaces/DadosGerais.interface';
-import { INutrientesCTC } from './../../shared/interfaces/NutrientesCTC.interface';
+import { INutrientes } from '../../shared/interfaces/Nutrientes.interface';
 import { ETipoSolo } from './../../shared/enums/TipoSolo.enum';
 import { ETexturaSoloMedia } from './../../shared/enums/TexturaSoloMedia.enum';
 import { ETexturaSoloArgiloso } from './../../shared/enums/TexturaSoloArgiloso.enum';
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-general-data',
@@ -16,17 +18,13 @@ export class GeneralDataComponent implements OnInit {
   IdeaisSoloArgiloso = ETexturaSoloArgiloso;
   IdeaisSoloMedia = ETexturaSoloMedia;
   tiposSolo = ETipoSolo;
-  nutrientes: INutrientesCTC;
+  nutrientes: INutrientes;
   dadosGerais: IDadosGerais;
-  results: {
-    scmol: any,
-    ctccmol: any,
-    vatual: any,
-  };
+  results: IResultadoEquilibrioCorrecao;
 
   @ViewChild('resultados') resultados: ElementRef;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private http: HttpClient) {
     this.generalForm = this.formBuilder.group({
       produtor: [null, Validators.required],
       data: [null, Validators.required],
@@ -48,49 +46,49 @@ export class GeneralDataComponent implements OnInit {
       enxofre: [null, Validators.required],
       aluminio: [null, Validators.required],
       hal: [null, Validators.required],
+      mo: [null, Validators.required],
     });
   }
 
   ngOnInit(): void {
     this.results = {
-      scmol: null,
-      ctccmol: null,
-      vatual: null,
+      ctccmol: 0,
+      scmol: 0,
+      carbono: 0,
+      mo: 0,
+      vatual: 0,
     }
   }
 
   salvar(): void {
     if(this.generalForm.errors)
       return;
-    this.dadosGerais = {
-      areaTalhao: this.generalForm.controls['areaTalhao'].value,
-      areaTotal: this.generalForm.controls['areaTotal'].value,
-      data: this.generalForm.controls['data'].value,
-      lote: this.generalForm.controls['lote'].value,
-      matriculaLote: this.generalForm.controls['matriculaLote'].value,
-      municipio: this.generalForm.controls['municipio'].value,
-      produtor: this.generalForm.controls['produtor'].value,
-      profundidadeAmostra: this.generalForm.controls['profundidadeAmostra'].value,
-      responsavelTecnico: this.generalForm.controls['responsavelTecnico'].value,
-      resultNum: this.generalForm.controls['resultNum'].value,
-      sistemaCultivo: this.generalForm.controls['sistemaCultivo'].value,
-      talhao: this.generalForm.controls['talhao'].value,
-      texturaSolo: this.generalForm.controls['texturaSolo'].value,
-    };
     this.nutrientes = {
+      fosforo: this.generalForm.controls['fosforo'].value,
+      potassio: this.generalForm.controls['potassio'].value,
+      calcio: this.generalForm.controls['calcio'].value,
+      magnesio: this.generalForm.controls['magnesio'].value,
+      enxofre: this.generalForm.controls['enxofre'].value,
       aluminio: this.generalForm.controls['aluminio'].value,
       aluminioHidrogenio: this.generalForm.controls['hal'].value,
-      calcio: this.generalForm.controls['calcio'].value,
-      enxofre: this.generalForm.controls['enxofre'].value,
-      fosforo: this.generalForm.controls['fosforo'].value,
-      magnesio: this.generalForm.controls['magnesio'].value,
-      potassio: this.generalForm.controls['potassio'].value,
+      mo: this.generalForm.controls['mo'].value,
     };
-    this.results = {
-      scmol: 111,
-      ctccmol: 111,
-      vatual: 111,
-    }
+
+    const headers = new HttpHeaders();
+    headers.append('Access-Control-Allow-Headers', 'Content-Type');
+    headers.append('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    headers.append('Access-Control-Allow-Origin', '*');
+    headers.append('Content-Type', 'application/json; charset=UTF-8')
+    this.http.post<IResultadoEquilibrioCorrecao>('http://localhost:8080/equilibriocorrecao', this.nutrientes, {headers: headers}).subscribe({
+      next: data => {
+        this.results = data;
+      },
+      error: error => {
+        console.log(error);
+      }
+    });
+
+
     this.resultados.nativeElement.scrollIntoView();
   }
 }
