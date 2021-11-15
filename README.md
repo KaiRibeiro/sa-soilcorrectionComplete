@@ -3,7 +3,7 @@
 Olá professor tenho uma dúvida em relação a Correção de Fósforo.
 A planilha contém 12 fontes de fósforo, porém no arquivo FonteFosforo.java existem somente 3 fontes.
 Devo implementar as fontes faltantes ou trabalhar com oque está pronto no projeto java?
-![Duvida1](./pics/fontesFosforo.PNG)
+![Duvida1](./pics/FontesFosforo.PNG)
 ![Duvida2](./pics/fontesJava.PNG)
 
 ## Projeto
