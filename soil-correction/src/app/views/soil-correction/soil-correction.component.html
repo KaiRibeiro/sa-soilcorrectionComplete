@@ -1,15 +1,15 @@
 <mat-tab-group mat-align-tabs="center">
     <mat-tab label="Dados Gerais">
-        <app-general-data></app-general-data>
+        <app-general-data #generalDataComponent></app-general-data>
     </mat-tab>
-    <mat-tab label="Correção/Recuperação de Fósforo">
-      <app-phosphorus-correction></app-phosphorus-correction>
+    <mat-tab [disabled]="!this.generalDataComponent.isSaved" label="Correção/Recuperação de Fósforo">
+      <app-phosphorus-correction *ngIf="this.generalDataComponent.isSaved" #phosphorusCorrectionComponent [fosforo]="this.generalDataComponent.nutrientes.fosforo"></app-phosphorus-correction>
     </mat-tab>
-    <mat-tab label="Correção/Recuperação de Potássio">
-      <app-potassium-correction></app-potassium-correction>
+    <mat-tab [disabled]="!this.generalDataComponent.isSaved" label="Correção/Recuperação de Potássio">
+      <app-potassium-correction *ngIf="this.generalDataComponent.isSaved" #potassiumCorrectionComponent [potassio]="this.generalDataComponent.nutrientes.potassio" [ctcCmol]="this.generalDataComponent.results.ctccmol"></app-potassium-correction>
     </mat-tab>
-    <mat-tab label="Correção/Recuperação de Cálcio e Magnésio">
-      <app-calcium-magnesium-correction></app-calcium-magnesium-correction>
+    <mat-tab [disabled]="!this.generalDataComponent.isSaved" label="Correção/Recuperação de Cálcio e Magnésio">
+      <app-calcium-magnesium-correction *ngIf="this.generalDataComponent.isSaved" #calciumMagCorrectionComponent></app-calcium-magnesium-correction>
     </mat-tab>
 </mat-tab-group>
 

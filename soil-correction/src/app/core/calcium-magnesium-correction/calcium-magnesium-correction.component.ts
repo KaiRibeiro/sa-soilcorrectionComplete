@@ -53,7 +53,7 @@ export class CalciumMagnesiumCorrectionComponent implements OnInit {
   }
 
   corrigir(): void {
-    if(this.calciumMagnesiumCorrectionForm.errors)
+    if(!this.calciumMagnesiumCorrectionForm.valid)
       return;
     this.dadosCorrecao = {
       participacaoDesejadaCalcio: this.calciumMagnesiumCorrectionForm.controls['participacaoDesejadaCalcio'].value,

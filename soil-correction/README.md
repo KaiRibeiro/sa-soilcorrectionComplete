@@ -22,17 +22,17 @@ No momento a tela principal possui uma barra no topo com um logo do IDR-PR e o n
 ![Correção1](../pics/correcao.PNG)
 ![Correção2](../pics/correcao2.PNG)
 ![Correção3](../pics/correcao3.PNG)
-A tela de correção de solo possui o componente de dados gerais. Também foram separados entre guias as telas de correção.
+A tela de correção de solo possui o componente de dados gerais. Também foram separados entre guias as telas de correção, que só serao habilitadas caso a correção de solo seja feita.
 Ao selecionar a textura de solo, os valores ideais para os teores serão preenchidos.
 Botão Salvar é flutuante.
-Ao preencher os dados e clicar no botão salvar, a tela irá rolar até os resultados de S cmol, CTC cmol e V% atual nos quais serão preenchidos com valores falsos.
+Ao preencher os dados e clicar no botão salvar, a tela irá rolar até os resultados de S cmol, CTC cmol e V% atual, MO% e Carbono nos quais serão preenchidos com os valores do cálculo CTC.
 
 ## Correção/Recuperação de Fósforo
 
 ![Fosforo1](../pics/fosforo.PNG)
 ![Fosforo2](../pics/fosforo2.PNG)
 O componente de Correção/Recuperação de Fósforo possúi um formulário para a seleção de Teor de Fósforo a atingir, a Fonte de Fósforo, o custo da fonte e a eficiência do fósforo.
-Ao clicar no botão corrigir serão preenchidos com dados falsos os campos: Quantidade a aplicar, Custo - R$/ha, "Essa correção de FÓSFORO, fornecerá também (kg/ha):"
+Ao clicar no botão corrigir serão preenchidos com dados da correção de fósforo os campos: Quantidade a aplicar, Custo - R$/ha, "Essa correção de FÓSFORO, fornecerá também (kg/ha):"
 
 ## Correção/Recuperação de Potássio
 

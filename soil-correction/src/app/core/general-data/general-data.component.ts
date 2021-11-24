@@ -21,6 +21,7 @@ export class GeneralDataComponent implements OnInit {
   nutrientes: INutrientes;
   dadosGerais: IDadosGerais;
   results: IResultadoEquilibrioCorrecao;
+  isSaved = false;
 
   @ViewChild('resultados') resultados: ElementRef;
 
@@ -58,10 +59,20 @@ export class GeneralDataComponent implements OnInit {
       mo: 0,
       vatual: 0,
     }
+    this.nutrientes = {
+      fosforo: 0,
+      potassio: 0,
+      calcio: 0,
+      magnesio: 0,
+      enxofre: 0,
+      aluminio: 0,
+      aluminioHidrogenio: 0,
+      mo: 0,
+    }
   }
 
   salvar(): void {
-    if(this.generalForm.errors)
+    if(!this.generalForm.valid)
       return;
     this.nutrientes = {
       fosforo: this.generalForm.controls['fosforo'].value,
@@ -82,6 +93,12 @@ export class GeneralDataComponent implements OnInit {
     this.http.post<IResultadoEquilibrioCorrecao>('http://localhost:8080/equilibriocorrecao', this.nutrientes, {headers: headers}).subscribe({
       next: data => {
         this.results = data;
+        this.results.ctccmol = Number(this.results.ctccmol.toFixed(2));
+        this.results.scmol = Number(this.results.scmol.toFixed(2));
+        this.results.carbono = Number(this.results.carbono.toFixed(2));
+        this.results.mo = Number(this.results.mo.toFixed(2));
+        this.results.vatual = Number(this.results.vatual.toFixed(2));
+        this.isSaved = true;
       },
       error: error => {
         console.log(error);

@@ -2,7 +2,7 @@ import { IDadosCorrecaoFosforo } from './../../shared/interfaces/DadosCorrecaoFo
 import { IResultadoCorrecaoFosforo } from './../../shared/interfaces/ResultadoCorrecaoFosforo';
 import { EFontesFosforo } from './../../shared/enums/FontesFosforo.enum';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 
 @Component({
@@ -11,6 +11,9 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
   styleUrls: ['./phosphorus-correction.component.scss'],
 })
 export class PhosphorusCorrectionComponent implements OnInit {
+
+  @Input() fosforo: number;
+
   phosphorusCorrectionForm: FormGroup;
   fonteFosforo = EFontesFosforo;
   results: IResultadoCorrecaoFosforo;
@@ -42,7 +45,7 @@ export class PhosphorusCorrectionComponent implements OnInit {
     if (this.results.nutrientesAdicionais) {
       this.results.nutrientesAdicionais = [];
     }
-    if (this.phosphorusCorrectionForm.errors) return;
+    if (!this.phosphorusCorrectionForm.valid) return;
     this.dadosCorrecao = {
       teor: this.phosphorusCorrectionForm.controls['teor'].value,
       fonteFosforo:
@@ -50,6 +53,12 @@ export class PhosphorusCorrectionComponent implements OnInit {
       custoFonte: this.phosphorusCorrectionForm.controls['custoFonte'].value,
       eficiencia: this.phosphorusCorrectionForm.controls['eficiencia'].value,
     };
+
+    if(this.fosforo >= this.dadosCorrecao.teor) {
+      this.dadosCorrecao.teor = 0;
+    } else {
+      this.dadosCorrecao.teor = this.dadosCorrecao.teor - this.fosforo;
+    }
 
     const headers = new HttpHeaders();
     headers.append('Access-Control-Allow-Headers', 'Content-Type');
@@ -68,17 +77,23 @@ export class PhosphorusCorrectionComponent implements OnInit {
       .subscribe({
         next: (data) => {
           this.results = data;
+          this.results.custoHa = Number((this.results.custoHa).toFixed(2));
+          this.results.qntAplicar = Number((this.results.qntAplicar).toFixed(2));
           if (this.results.nutrientesAdicionais)
             switch (this.dadosCorrecao.fonteFosforo) {
               case this.fonteFosforo.Superfosfato_Simples:
-                this.nutrienteA = 'Enxofre';
-                this.nutrienteB = 'Cálcio';
+                this.results.nutrientesAdicionais[0].correcaoAdicional = Number((this.results.nutrientesAdicionais[0].correcaoAdicional).toFixed(2));
+                this.results.nutrientesAdicionais[1].correcaoAdicional = Number((this.results.nutrientesAdicionais[1].correcaoAdicional).toFixed(2));
+                this.nutrienteA = 'Cálcio';
+                this.nutrienteB = 'Enxofre';
                 break;
               case this.fonteFosforo.Superfosfato_Triplo:
-                this.nutrienteA = 'Cálcio';
+                this.results.nutrientesAdicionais[0].correcaoAdicional = Number((this.results.nutrientesAdicionais[0].correcaoAdicional).toFixed(2));
+                this.nutrienteB = 'Cálcio';
                 break;
               case this.fonteFosforo.MAP:
-                this.nutrienteA = 'Nitrogênio';
+                this.results.nutrientesAdicionais[0].correcaoAdicional = Number((this.results.nutrientesAdicionais[0].correcaoAdicional).toFixed(2));
+                this.nutrienteB = 'Nitrogênio';
                 break;
             }
         },
