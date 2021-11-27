@@ -94,3 +94,35 @@
     </mat-form-field>
   </h2>
 </div>
+
+<div *ngIf="this.results.nutrientesAdicionais" fxLayout="column" fxLayoutAlign="center center">
+  <mat-card>
+    <mat-card-title>Essa correção de POTÁSSIO, fornecerá também (kg/ha):</mat-card-title>
+    <mat-card-content  fxLayout="row" fxLayoutAlign="center center">
+      <div *ngIf="this.results.nutrientesAdicionais[0]">
+        <h3 class="nutrienteA">{{this.nutrienteB}}</h3>
+        <mat-form-field appearance="outline">
+          <input
+          matInput
+          class="qntNutrienteA"
+          [value]="this.results.nutrientesAdicionais[0].correcaoAdicional"
+          [disabled]="!this.results.nutrientesAdicionais[0].correcaoAdicional"
+          readonly
+        />
+        </mat-form-field>
+      </div>
+      <div *ngIf="this.results.nutrientesAdicionais[1]">
+        <h3 class="nutrienteB">{{this.nutrienteA}}</h3>
+        <mat-form-field appearance="outline">
+          <input
+          class="qntNutrienteB"
+          matInput
+          [value]="this.results.nutrientesAdicionais[1].correcaoAdicional"
+          [disabled]="!this.results.nutrientesAdicionais[1].correcaoAdicional"
+          readonly
+        />
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
