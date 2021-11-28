@@ -50,7 +50,7 @@ export class PotassiumCorrectionComponent implements OnInit {
     }
     if (!this.potassiumCorrectionForm.valid) return;
     this.dadosCorrecao = {
-      participacaoAtual: this.participacaoAtual/100,
+      participacaoAtual: ((this.potassio * 100) / this.ctcCmol)/100,
       participacaoDesejada:
         this.potassiumCorrectionForm.controls['participacaoDesejada'].value/100,
       fontePotassio:
@@ -85,6 +85,7 @@ export class PotassiumCorrectionComponent implements OnInit {
               break;
             case this.fontePotassio.Sulfato_Potassio_Mag:
               this.results.nutrientesAdicionais[0].correcaoAdicional = Number((this.results.nutrientesAdicionais[0].correcaoAdicional).toFixed(2));
+              this.results.nutrientesAdicionais[1].correcaoAdicional = Number((this.results.nutrientesAdicionais[1].correcaoAdicional).toFixed(2));
               this.nutrienteB = 'Enxofre';
               this.nutrienteA = 'Magnésio';
               break;
