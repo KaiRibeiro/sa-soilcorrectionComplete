@@ -16,7 +16,7 @@ public class CorrecaoFosforoController {
 
     @CrossOrigin
     @PostMapping("/correcaofosforo")
-    public ResultadoCorrecaoFosforo equilibrioCorrecao(@RequestBody DadosCorrecaoFosforo dadosCorrecaoFosforo) {
+    public ResultadoCorrecaoFosforo correcaoFosforo(@RequestBody DadosCorrecaoFosforo dadosCorrecaoFosforo) {
         CorrecaoFosforo correcaoFosforo = new CorrecaoFosforo();
 
         var teorFosforoAdicionarKgHa = new ConverteMgDm3EmKgHa().converte(dadosCorrecaoFosforo.getTeor());

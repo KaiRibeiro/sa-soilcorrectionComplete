@@ -17,7 +17,7 @@ public class CorrecaoPotassioController {
 
     @CrossOrigin
     @PostMapping("/correcaopotassio")
-    public ResultadoCorrecaoPotassio equilibrioCorrecao(@RequestBody DadosCorrecaoPotassio dadosCorrecaoPotassio) {
+    public ResultadoCorrecaoPotassio correcaoPotassio(@RequestBody DadosCorrecaoPotassio dadosCorrecaoPotassio) {
         CorrecaoPotassio correcaoPotassio = new CorrecaoPotassio();
         
         var necessidadeCMolcDM3 = correcaoPotassio.calculaNecessidadeAdicionarCMolcDm3(

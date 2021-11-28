@@ -24,16 +24,6 @@
           />
             <mat-hint>Ideal 45 a 55%</mat-hint>
           </mat-form-field>
-          <h3 class="cardLabel">Após as correções:</h3>
-          <mat-form-field appearance="outline">
-            <input
-            matInput
-            class="calcioApos"
-            [value]="this.results.calcioApos"
-            [disabled]="!this.results.calcioApos"
-            readonly
-          />
-          </mat-form-field>
           <h3 class="cardLabel">% de participação do CÁLCIO na CTC, desejada:</h3>
           <mat-form-field appearance="outline">
             <mat-label>Participação Desejada</mat-label>
@@ -57,16 +47,6 @@
             readonly
           />
             <mat-hint>Ideal 10 a 15%</mat-hint>
-          </mat-form-field>
-          <h3 class="cardLabel">Após as correções:</h3>
-          <mat-form-field appearance="outline">
-            <input
-            matInput
-            class="magnesioApos"
-            [value]="this.results.magnesioApos"
-            [disabled]="!this.results.magnesioApos"
-            readonly
-          />
           </mat-form-field>
         </mat-card-content>
       </mat-card>
@@ -187,11 +167,41 @@
       <input
         matInput
         class="vApos"
-        [value]="this.results.vApos"
-        [disabled]="!this.results.vApos"
+        [value]="this.vApos"
+        [disabled]="!this.vApos"
         readonly
       />
     </mat-form-field>
   </h2>
 </div>
-
+<div *ngIf="this.results.nutrientesAdicionais" fxLayout="column" fxLayoutAlign="center center">
+  <mat-card>
+    <mat-card-title>Essa correção de POTÁSSIO, fornecerá também (kg/ha):</mat-card-title>
+    <mat-card-content  fxLayout="row" fxLayoutAlign="center center">
+      <div *ngIf="this.results.nutrientesAdicionais[0]">
+        <h3 class="nutrienteA">{{this.nutrienteB}}</h3>
+        <mat-form-field appearance="outline">
+          <input
+          matInput
+          class="qntNutrienteA"
+          [value]="this.results.nutrientesAdicionais[0].correcaoAdicional"
+          [disabled]="!this.results.nutrientesAdicionais[0].correcaoAdicional"
+          readonly
+        />
+        </mat-form-field>
+      </div>
+      <div *ngIf="this.results.nutrientesAdicionais[1]">
+        <h3 class="nutrienteB">{{this.nutrienteA}}</h3>
+        <mat-form-field appearance="outline">
+          <input
+          class="qntNutrienteB"
+          matInput
+          [value]="this.results.nutrientesAdicionais[1].correcaoAdicional"
+          [disabled]="!this.results.nutrientesAdicionais[1].correcaoAdicional"
+          readonly
+        />
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
