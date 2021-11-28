@@ -38,16 +38,16 @@ Ao clicar no botão corrigir serão preenchidos com dados da correção de fósf
 
 ![Potassio1](../pics/potassio.PNG)
 ![Potassio2](../pics/potassio2.PNG)
-O componente de Correção/Recuperação de Potássio possúi um campo "Participação atual do POTÁSSIO na CTC do solo:" com um valor falso, um formulário para informar a participação desejada de Potássio na CTC, a Fonte de Potássio e o custo da fonte.
-Ao clicar no bottão corrigir serão preenchidos com dados falsos os campos: Quantidade a aplicar, Custo - R$/ha.
+O componente de Correção/Recuperação de Potássio possúi um campo "Participação atual do POTÁSSIO na CTC do solo:" com um valor real presente na CTC, um formulário para informar a participação desejada de Potássio na CTC, a Fonte de Potássio e o custo da fonte.
+Ao clicar no bottão corrigir serão preenchidos com dados da correção de potássio os campos: Quantidade a aplicar, Custo - R$/ha.
 
 ## Correção/Recuperação de Cálcio e Magnésio
 
 ![calcioMag1](../pics/calcioMag.PNG)
 ![calcioMag2](../pics/calcioMag2.PNG)
-O componente de Correção/Recuperação de Cálcio e Magnésio possúi dois "cards", um para Cálcio e outro para Magnésio. O de cálcio possúi 3 campos: Participação atual na CTC do solo com valor falso, Após Correções, % de participação do CÁLCIO na CTC, desejada. Já o de magnésio possui: Participação atual na CTC do solo com valor falso e Após as correções.
+O componente de Correção/Recuperação de Cálcio e Magnésio possúi dois "cards", um para Cálcio e outro para Magnésio. O de cálcio possúi 3 campos: Participação atual na CTC do solo com valor real presente na CTC, Após Correções, % de participação do CÁLCIO na CTC, desejada. Já o de magnésio possui: Participação atual na CTC do solo com valor real presente na CTC e Após as correções.
 O componente também possui os seguintes campos a preencher: Fonte de Corretivo a usar, Custo da Fonte, PRNT, Teor de CaO do corretivo.
-Ao clicar no bottão corrigir serão preenchidos com dados falsos os campos: Após correção dos dois cards, Quantidade a aplicar, Custo - R$/ha., V% Após Correções.
+Ao clicar no bottão corrigir serão preenchidos com dados da correção de Cálcio e Magnésio os campos: Após correção dos dois cards, Quantidade a aplicar, Custo - R$/ha., V% Após Correções.
 
 ## Iniciar Projeto
 
